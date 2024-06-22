@@ -3,7 +3,7 @@ import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import Linkedin from "../assets/linkedin.svg";
 import github from "../assets/github.svg";
-import aathif from "../assets/Aathif.jpg";
+import aathif from "../assets/Aathif.png";
 const Home = () => {
   return (
     <section className="home">
