@@ -148,4 +148,5 @@ span {
   box-shadow: none;
 }
 .about {
+  display: flex;
 }
