@@ -1,13 +1,14 @@
-import AngleUp from "../assets/angleup.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-text">
-        <p>Copyright &copy; 2024 AathifAhamed | All Rights Reserved.</p>
+        <p>Copyright &copy; 2024 AathifAhamed | All Rights Reserved. </p>
       </div>
       <div className="footer-iconTop">
         <a href="#">
-          <img className="Angle" src={AngleUp}></img>
+          <FontAwesomeIcon icon={faAngleUp} />
         </a>
       </div>
     </footer>

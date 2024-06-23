@@ -1,30 +1,46 @@
 import React from "react";
-import nav from "../assets/nav.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "./Header.css"; // Import CSS file for header styles
+import { useState } from "react";
+
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu open/close
+
+  // Function to toggle menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
       <a href="#" className="logo">
         Portfolio
       </a>
-      <img src={nav} className="navImg" />
-      <nav className="navbar">
-        <a href="#" className="active">
+      <FontAwesomeIcon
+        icon={faBars}
+        id="menu-icon"
+        onClick={toggleMenu} // Toggle menu visibility on click
+      />
+      <nav className={`navbar ${isMenuOpen ? "open" : ""}`}>
+        <a href="#home" onClick={() => setIsMenuOpen(false)}>
           Home
         </a>
-        <a href="#" className="active">
+        <a href="#about" onClick={() => setIsMenuOpen(false)}>
           About
         </a>
-        <a href="#" className="active">
+        <a href="#services" onClick={() => setIsMenuOpen(false)}>
           Services
         </a>
-        <a href="#" className="active">
+        <a href="#portfolio" onClick={() => setIsMenuOpen(false)}>
           Portfolio
         </a>
-        <a href="#" className="active">
+        <a href="#contact" onClick={() => setIsMenuOpen(false)}>
           Contact
         </a>
       </nav>
     </header>
   );
 };
+
 export default Header;

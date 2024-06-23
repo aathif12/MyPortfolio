@@ -1,12 +1,14 @@
 import React from "react";
-import facebook from "../assets/facebook.svg";
-import instagram from "../assets/instagram.svg";
-import Linkedin from "../assets/linkedin.svg";
-import github from "../assets/github.svg";
+
 import aathif from "../assets/Aathif.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 const Home = () => {
   return (
-    <section className="home">
+    <section className="home" id="home">
       <div className="Home-content">
         <h3>Hi, Myself</h3>
         <h1>Aathif Ahamed</h1>
@@ -20,16 +22,16 @@ const Home = () => {
 
         <div className="social-media">
           <a href="#">
-            <img src={facebook} className="logoFacebook" />
+            <FontAwesomeIcon icon={faFacebook} />
           </a>
           <a href="#">
-            <img src={instagram} className="logoInstagram" />
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a href="#">
-            <img src={Linkedin} className="logoLinkedin" />
+            <FontAwesomeIcon icon={faLinkedinIn} />
           </a>
           <a href="#">
-            <img src={github} className="logoGithub" />
+            <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>
         <a href="#" className="btn">

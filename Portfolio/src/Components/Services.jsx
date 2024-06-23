@@ -1,6 +1,7 @@
-import Code from "../assets/Code.svg";
-import palette from "../assets/palette.svg";
-import android from "../assets/android.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAndroid } from "@fortawesome/free-brands-svg-icons";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faPalette } from "@fortawesome/free-solid-svg-icons";
 const Services = () => {
   return (
     <section className="services">
@@ -9,7 +10,7 @@ const Services = () => {
       </h2>
       <div className="service-container">
         <div className="services-box">
-          <img src={Code} alt="" className="code" />
+          <FontAwesomeIcon className="Servciesicon" icon={faCode} />
           <h3>Web Development</h3>
           <p>
             Web development is the art and science of building websites and web
@@ -21,7 +22,7 @@ const Services = () => {
           </a>
         </div>
         <div className="services-box">
-          <img src={palette} alt="" className="code" />
+          <FontAwesomeIcon className="Servciesicon" icon={faPalette} />
           <h3>UI/UX Design</h3>
           <p>
             Web development is the art and science of building websites and web
@@ -33,7 +34,7 @@ const Services = () => {
           </a>
         </div>
         <div className="services-box">
-          <img src={android} alt="" className="code" />
+          <FontAwesomeIcon className="Servciesicon" icon={faAndroid} />
           <h3>App Devlelopment</h3>
           <p>
             Web development is the art and science of building websites and web

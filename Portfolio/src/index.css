@@ -1,25 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-.logoFacebook {
-  width: 40px;
-  height: 40px;
-}
-.logoInstagram {
-  width: 40px;
-  height: 40px;
-}
-.logoLinkedin {
-  width: 40px;
-  height: 40px;
-}
-.logoGithub {
-  width: 40px;
-  height: 40px;
-}
-.navImg {
-  font-size: 3.6rem;
-  color: var(--text-color);
-  display: none;
-}
 
 * {
   margin: 0;
@@ -42,7 +21,7 @@
   padding: 10rem 9% 2rem;
 }
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -52,6 +31,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  height: 4vw;
 }
 
 .logo {
@@ -60,32 +40,36 @@
   font-weight: 700;
   cursor: default;
 }
-.active {
-  font-size: 1.5rem;
+.navbar a {
+  font-size: 1.2rem;
   color: var(--text-color);
-  margin-left: 4rem;
+  margin-left: 2rem;
   font-weight: 700;
 }
-.navbar a:hover,
-.navbar a:active {
-  color: var(--text-color);
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--main-color);
+  display: none;
 }
+
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--bg-color);
+  padding-left: 10vh;
+  padding-bottom: 4vw;
+  padding-top: 4vw;
+  padding-right: 10vh;
 }
 .homImg {
   width: 25vw;
   animation: floatImage 4s ease-in-out infinite;
 }
 
-.Home-content {
-  padding: 40px;
+.Home-content h3 {
   font-size: 3.2rem;
   font-weight: 700;
-  color: var(--text-color);
 }
 .Home-content h3:nth-of-type(2) {
   margin-bottom: 2rem;
@@ -94,9 +78,9 @@ span {
   color: var(--main-color);
 }
 .Home-content h1 {
-  font-size: 5.6rem;
+  font-size: 5rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1;
 }
 
 @keyframes floatImage {
@@ -111,7 +95,8 @@ span {
   }
 }
 
-.Home-content p {
+.Home-content p,
+i {
   font-size: 1rem;
 }
 .social-media a {
@@ -129,6 +114,7 @@ span {
   transition: 0.5 ease;
 }
 .social-media a:hover {
+  background: var(--main-color);
   color: var(--snd-bf-color);
   box-shadow: 0 0 1rem var(--main-color);
 }
@@ -148,6 +134,10 @@ span {
   box-shadow: none;
 }
 .about {
+  padding-left: 10vh;
+  padding-bottom: 4vw;
+  padding-top: 4vw;
+  padding-right: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,10 +162,17 @@ span {
 .about-content p {
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
+  text-align: justify;
 }
 html {
   color: var(--text-color);
   background: var(--bg-color);
+}
+.services {
+  padding-left: 10vh;
+  padding-bottom: 4vw;
+  padding-top: 4vw;
+  padding-right: 10vh;
 }
 .services h2 {
   margin-bottom: 5rem;
@@ -186,6 +183,7 @@ html {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+
   padding-bottom: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -203,18 +201,19 @@ html {
   border-color: var(--main-color);
   transform: scale(1.02);
 }
-.services-box img {
+.Servciesicon {
   font-size: 7rem;
   color: var(--main-color);
 }
 .services-box p {
   font-size: 1rem;
   margin: 1rem 0 3rem;
+  text-align: justify;
 }
-.code {
-  width: 100px;
-}
+
 .portfolio {
+  padding-bottom: 4vw;
+  padding-top: 4vw;
   background: var(--snd-bf-color);
 }
 .portfolio h2 {
@@ -228,7 +227,6 @@ html {
   padding-bottom: 2rem;
   padding-left: 5rem;
   padding-right: 5rem;
-  color: var(--text-color);
 }
 .portfolio-container .portfolio-box {
   position: relative;
@@ -237,12 +235,12 @@ html {
   overflow: hidden;
   display: flex;
 }
-.portimg {
+.portfolio-box img {
   width: 100%;
   transition: 0.5s ease;
   opacity: 0.7;
 }
-.portfolio-box:hover .portimg {
+.portfolio-box:hover img {
   transform: scale(1.1);
 }
 .portfolio-box .portfolio-layer {
@@ -266,11 +264,10 @@ html {
 .portfolio-layer h4 {
   font-size: 3rem;
 }
-.portfolio-layer:hover p {
+.portfolio-layer p {
   font-size: 1.6rem;
   margin: 0.3rem 0 1rem;
-  color: var(--text-color);
-  text-align: center;
+  text-align: justify;
 }
 .portfolio-layer a {
   display: inline-flex;
@@ -280,11 +277,16 @@ html {
   height: 5rem;
   background: var(--text-color);
   border-radius: 50%;
-  font-size: 2rem;
-  color: var(--snd-bf-color);
+}
+.contact {
+  padding-left: 10vh;
+  padding-bottom: 4vw;
+  padding-top: 4vw;
+  padding-right: 10vh;
 }
 
-#portfolioimg {
+.portfolio-layer a,
+.aathi {
   font-size: 2rem;
   color: var(--text-color);
 }
@@ -389,6 +391,39 @@ html {
     width: 90vw;
     margin-top: 4rem;
   }
+  .header {
+    flex-direction: row;
+    justify-content: space-between; /* Align logo and menu icon on opposite ends */
+    align-items: center;
+  }
+
+  #menu-icon {
+    display: block; /* Show the menu icon on smaller screens */
+  }
+
+  .navbar {
+    position: absolute; /* Position the navbar absolute for easier control */
+    top: 60px; /* Adjust based on your header height */
+    right: 0;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease; /* Smooth transition for menu opening */
+  }
+
+  .navbar.open {
+    height: auto; /* Expand height to show menu when .open class is applied */
+  }
+
+  .navbar a {
+    padding: 1rem;
+    width: 100%;
+    text-align: left; /* Align text to the left */
+  }
+
   .about {
     flex-direction: column;
   }
@@ -422,5 +457,82 @@ html {
   }
   .contact from .input-box input {
     width: 100%;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#menu-icon {
+  display: none; /* Initially hide the menu icon on larger screens */
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+/* Media query for mobile layout */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between; /* Align logo and menu icon on opposite ends */
+    align-items: center;
+  }
+
+  #menu-icon {
+    display: block; /* Show the menu icon on smaller screens */
+  }
+
+  .navbar {
+    position: -ms-page;
+    top: 100%; /* Position the navbar absolute for easier control */
+    /* Adjust based on your header height */
+    right: 0;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease; /* Smooth transition for menu opening */
+  }
+
+  .navbar.open {
+    height: auto; /* Expand height to show menu when .open class is applied */
+  }
+
+  .navbar a {
+    padding: 1rem;
+    width: 100%;
+    text-align: left; /* Align text to the left */
   }
 }
