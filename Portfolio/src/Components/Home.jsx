@@ -1,11 +1,14 @@
 import React from "react";
-
+import { ReactTyped } from "react-typed";
 import aathif from "../assets/Aathif.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faFacebook,
+  faLinkedinIn,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
 const Home = () => {
   return (
     <section className="home" id="home">
@@ -13,7 +16,16 @@ const Home = () => {
         <h3>Hi, Myself</h3>
         <h1>Aathif Ahamed</h1>
         <h3>
-          And I'm a <span> Frontend Developer</span>
+          And I'm a{" "}
+          <span>
+            <ReactTyped
+              strings={["Web Developer", "UI/UX Designer", "App Developer"]}
+              typeSpeed={100}
+              backSpeed={50}
+              backDelay={1000}
+              loop
+            />
+          </span>
         </h3>
         <p>
           "Transforming Ideas into Stunning Digital Realities – Aathif, Expert
@@ -39,9 +51,10 @@ const Home = () => {
         </a>
       </div>
       <div className="home-img">
-        <img className="homImg" src={aathif} />
+        <img className="homImg" src={aathif} alt="Aathif Ahamed" />
       </div>
     </section>
   );
 };
+
 export default Home;
