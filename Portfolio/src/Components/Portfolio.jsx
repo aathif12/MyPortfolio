@@ -4,6 +4,7 @@ import img3 from "../assets/3.jpg";
 import img4 from "../assets/4.jpg";
 import img5 from "../assets/5.jpg";
 import img6 from "../assets/6.jpg";
+import Bookme from "../assets/Bookme.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 const Portfolio = () => {
@@ -14,7 +15,7 @@ const Portfolio = () => {
       </h2>
       <div className="portfolio-container">
         <div className="portfolio-box">
-          <img src={img1} alt="" className="portimg" />
+          <img src={Bookme} alt="" className="portimg" />
           <div className="portfolio-layer">
             <h4>Web Design</h4>
             <p>
@@ -27,7 +28,7 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="portfolio-box">
-          <img src={img2} alt="" className="portimg" />
+          <img src={Bookme} alt="" className="portimg" />
           <div className="portfolio-layer">
             <h4>MERN</h4>
             <p>
@@ -39,7 +40,7 @@ const Portfolio = () => {
             </a>
           </div>
         </div>
-        <div className="portfolio-box">
+        {/* <div className="portfolio-box">
           <img src={img3} alt="" className="portimg" />
           <div className="portfolio-layer">
             <h4>Web Design</h4>
@@ -90,7 +91,7 @@ const Portfolio = () => {
               <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

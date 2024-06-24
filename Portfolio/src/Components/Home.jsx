@@ -48,7 +48,10 @@ const Home = () => {
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>
-        <a href="#" className="btn">
+        <a
+          href="https://drive.google.com/file/d/1Q6dIYlyJvYMqwKIKyitISqeBSzbMklAS/view?usp=sharing"
+          className="btn"
+        >
           Download CV
         </a>
       </div>

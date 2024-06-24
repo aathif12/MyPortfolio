@@ -262,7 +262,7 @@ html {
   transform: translateY(0);
 }
 .portfolio-layer h4 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .portfolio-layer p {
   font-size: 1.2rem;
@@ -500,6 +500,54 @@ html {
   text-decoration: none;
   color: #fff;
   padding: 0.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .portfolio-box {
+    width: 45%;
+  }
+
+  .heading {
+    font-size: 2em;
+  }
+
+  .portfolio-layer h4 {
+    font-size: 1.2em;
+  }
+
+  .portfolio-layer p {
+    font-size: 0.9em;
+  }
+
+  .aathi {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-box {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 1.5em;
+  }
+
+  .portfolio-layer {
+    padding: 10px;
+  }
+
+  .portfolio-layer h4 {
+    font-size: 1em;
+  }
+
+  .portfolio-layer p {
+    font-size: 0.8em;
+  }
+
+  .aathi {
+    font-size: 1em;
+  }
 }
 
 /* Media query for mobile layout */
