@@ -13,9 +13,10 @@ const Services = () => {
           <FontAwesomeIcon className="Servciesicon" icon={faCode} />
           <h3>Web Development</h3>
           <p>
-            Web development is the art and science of building websites and web
-            applications that are not only visually appealing but also highly
-            functional and user-friendly.
+            Building responsive and secure websites with engaging front-end
+            interfaces (HTML, CSS, JavaScript) and robust back-end solutions
+            (Node.js, Python, PHP), including CMS integration and e-commerce
+            solutions.
           </p>
           <a href="#" className="btn">
             Read more
@@ -25,9 +26,9 @@ const Services = () => {
           <FontAwesomeIcon className="Servciesicon" icon={faPalette} />
           <h3>UI/UX Design</h3>
           <p>
-            Web development is the art and science of building websites and web
-            applications that are not only visually appealing but also highly
-            functional and user-friendly.
+            Crafting intuitive and visually appealing digital experiences that
+            exceed user expectations through research, wireframing, and
+            prototyping.
           </p>
           <a href="#" className="btn">
             Read more
@@ -37,9 +38,10 @@ const Services = () => {
           <FontAwesomeIcon className="Servciesicon" icon={faAndroid} />
           <h3>App Devlelopment</h3>
           <p>
-            Web development is the art and science of building websites and web
-            applications that are not only visually appealing but also highly
-            functional and user-friendly.
+            Developing native and hybrid mobile applications with a focus on
+            seamless user experiences, leveraging technologies like React
+            Native, ensuring functionality and performance from concept to
+            deployment
           </p>
           <a href="#" className="btn">
             Read more

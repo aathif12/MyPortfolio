@@ -10,13 +10,13 @@ const About = () => {
         <h2 className="heading">
           About <span>Me</span>
         </h2>
-        <h3>Frontend Developer</h3>
+        <h3> Digital Experience Architect </h3>
         <p>
-          Hi, I'm Aathif, a passionate and creative front-end developer
-          dedicated to building engaging and intuitive user experiences. With a
-          strong background in HTML, CSS, JavaScript, and various front-end
-          frameworks, I specialize in transforming innovative ideas into
-          beautiful, responsive, and functional websites and applications.
+          Greetings! I'm Aathif Ahamed, a dedicated Ui/UX designer and web/app
+          developer. I specialize in transforming complex ideas into elegant,
+          user-friendly interfaces and developing robust, high-performance web
+          and mobile applications. My passion lies in crafting designs that not
+          only look stunning but also deliver seamless user experiences.
         </p>
         <a href="#" className="btn">
           Read More
