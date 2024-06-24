@@ -17,19 +17,26 @@ const Portfolio = () => {
           <img src={img1} alt="" className="portimg" />
           <div className="portfolio-layer">
             <h4>Web Design</h4>
-            <p>Each project represents a unique challenge</p>
-            <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            <p>
+              Discover my Bus Booking App project, showcasing a user-friendly
+              interface for seamless travel planning.
+            </p>
+            <a href="https://www.figma.com/proto/ZWHSkdhDXVviJAVhW0c14i/Bus-Booking?page-id=0%3A1&node-id=2-2&starting-point-node-id=2%3A2&t=YpsWt1NquTln6FUD-1">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
           </div>
         </div>
         <div className="portfolio-box">
           <img src={img2} alt="" className="portimg" />
           <div className="portfolio-layer">
-            <h4>Web Design</h4>
+            <h4>MERN</h4>
             <p>
-              Each project represents a unique challenge and an opportunity to
-              create innovative, user-friendly web experiences.
+              Real-time scheduling, seat selection, Responsive UI and efficient
+              backend for smooth booking on any device..
             </p>
-            <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            <a href="https://github.com/SGopinath89/IT2342024BookMe.git">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
           </div>
         </div>
         <div className="portfolio-box">
@@ -40,7 +47,9 @@ const Portfolio = () => {
               Each project represents a unique challenge and an opportunity to
               create innovative, user-friendly web experiences.
             </p>
-            <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            <a href="">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
           </div>
         </div>
         <div className="portfolio-box">
@@ -51,7 +60,9 @@ const Portfolio = () => {
               Each project represents a unique challenge and an opportunity to
               create innovative, user-friendly web experiences.
             </p>
-            <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            <a href="">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
           </div>
         </div>
         <div className="portfolio-box">
@@ -62,18 +73,22 @@ const Portfolio = () => {
               Each project represents a unique challenge and an opportunity to
               create innovative, user-friendly web experiences.
             </p>
-            <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            <a href="">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
           </div>
         </div>
         <div className="portfolio-box">
-          // <img src={img6} alt="" className="portimg" />
+          <img src={img6} alt="" className="portimg" />
           <div className="portfolio-layer">
             <h4>Web Design</h4>
             <p>
               Each project represents a unique challenge and an opportunity to
               create innovative, user-friendly web experiences.
             </p>
-            <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            <a href="">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
           </div>
         </div>
       </div>
