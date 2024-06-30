@@ -23,14 +23,19 @@ const Darkmode = () => {
   return (
     <div className="dark_mode">
       <input
-        className="dark_mode_input"
         type="checkbox"
+        className="dark_mode_input"
         id="darkmode-toggle"
         onChange={toggleTheme}
       />
-      <label className="dark_mode_label" htmlFor="darkmode-toggle">
-        <FontAwesomeIcon icon={faSun} className="icon sun" />
-        <FontAwesomeIcon icon={faMoon} className="icon moon" />
+      <label
+        for="checkbox"
+        className="dark_mode_label"
+        htmlFor="darkmode-toggle"
+      >
+        <FontAwesomeIcon icon={faSun} className="fa-sun " />
+        <FontAwesomeIcon icon={faMoon} className="fa-moon" />
+        <span className="ball"></span>
       </label>
     </div>
   );

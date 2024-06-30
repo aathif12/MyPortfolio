@@ -20,20 +20,44 @@
   --lightthemesndbg: #c0c1c3;
   --lightthemeMain: #0d5185;
 }
+.aboutpng1 {
+  display: none;
+}
 
+.header a {
+  color: var(--text-color);
+}
+.homImg {
+  display: none;
+}
 body[data-theme="dark"] {
-  .header a {
-    color: var(--text-color);
+  .homImg {
+    display: none;
   }
-  .input-box input {
-    background-color: var(--snd-bf-color);
-  }
-  textarea {
-    background-color: var(--snd-bf-color);
+  .aboutpng1 {
+    display: none;
   }
 }
 
 body[data-theme="light"] {
+  .homImg {
+    display: grid;
+  }
+  .aboutpng1 {
+    display: grid;
+  }
+
+  .aboutpng {
+    display: none;
+  }
+  .homImg1 {
+    display: none;
+  }
+  .contact form .input-box input,
+  .contact form textarea {
+    background-color: var(--lightthemesndbg);
+    color: var(--lighthemeText);
+  }
   .header a {
     color: var(--lighthemeText);
   }
@@ -52,14 +76,25 @@ body[data-theme="light"] {
     background-color: var(--lightthemesndbg);
     border: 0.2rem solid var(--lightthemesndbg);
   }
-  .input-box input {
-    background-color: var(--lightthemesndbg);
-  }
-  textarea {
-    background-color: var(--lightthemesndbg);
-  }
+
   .footer {
     background-color: var(--lightthemesndbg);
+  }
+  .footer-iconTop {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: var(--lightthemeMain);
+    border-radius: 0.8rem;
+    transition: 0.5s ease;
+  }
+  .footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--lightthemeMain);
+  }
+  .footer-iconTop a img {
+    font-size: 2.4rem;
+    color: var(--lightthemesndbg);
   }
   .btn {
     color: var(--lightthemebg);
@@ -68,6 +103,9 @@ body[data-theme="light"] {
   }
   .btn:hover {
     box-shadow: none;
+  }
+  .portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
   }
 
   .social-media a {
@@ -88,6 +126,32 @@ body[data-theme="light"] {
     background: var(--lightthemeMain);
     color: var(--lightthemebg);
     box-shadow: 0 0 1rem var(--lightthemeMain);
+  }
+  .service-container .services-box:hover {
+    border-color: var(--lightthemeMain);
+    transform: scale(1.02);
+  }
+  .Servciesicon {
+    font-size: 7rem;
+    color: var(--lightthemeMain);
+  }
+  .portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      var(--lightthemeMain)
+    );
+    align-items: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: 0.5 ease;
   }
   @media (max-width: 768px) {
     .home {
@@ -144,6 +208,7 @@ body[data-theme="light"] {
     .about {
       flex-direction: column;
     }
+
     .about-img img {
       width: 90vw;
       margin-top: 4rem;
@@ -201,6 +266,10 @@ body[data-theme="light"] {
   padding-bottom: 4vw;
   padding-top: 4vw;
   padding-right: 10vh;
+}
+.homImg1 {
+  width: 25vw;
+  animation: floatImage 4s ease-in-out infinite;
 }
 .homImg {
   width: 25vw;
@@ -450,12 +519,13 @@ html {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.6rem;
-
+  background-color: var(--snd-bf-color);
   border-radius: 0.8rem;
   margin: 0.7rem 0;
 }
 .contact form .input-box input {
   width: 49%;
+  background-color: var(--snd-bf-color);
 }
 .contact form textarea {
   resize: none;

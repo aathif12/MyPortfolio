@@ -1,10 +1,11 @@
 import Aboutpng from "../assets/Aathif2.png";
-
+import Aboutpng1 from "../assets/Aathif21.png";
 const About = () => {
   return (
     <section className="about">
       <div className="about-img">
-        <img src={Aboutpng} alt="" />
+        <img src={Aboutpng} className="aboutpng" alt="" />
+        <img src={Aboutpng1} className="aboutpng1" alt="" />
       </div>
       <div className="about-content">
         <h2 className="heading">

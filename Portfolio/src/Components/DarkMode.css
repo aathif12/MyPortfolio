@@ -1,14 +1,5 @@
 /* DarkMode.css */
 
-.dark_mode {
-  display: flex;
-  align-items: center;
-}
-
-.dark_mode_input {
-  display: none;
-}
-
 .dark_mode_label {
   display: flex;
   align-items: center;
@@ -22,10 +13,43 @@
   transition: color 0.3s;
 }
 
-.sun {
-  color: #ffcc33; /* Sun color */
+.dark_mode_input {
+  opacity: 0;
+  position: absolute;
 }
 
-.moon {
-  color: #ffffff; /* Moon color */
+.dark_mode_label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.dark_mode_label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.dark_mode_input:checked + .dark_mode_label .ball {
+  transform: translateX(24px);
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 import aathif from "../assets/Aathif.png";
+import aathif1 from "../assets/Aathif1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -57,6 +58,7 @@ const Home = () => {
       </div>
       <div className="home-img">
         <img className="homImg" src={aathif} alt="Aathif Ahamed" />
+        <img className="homImg1" src={aathif1} alt="Aathif Ahamed" />
       </div>
     </section>
   );
