@@ -15,6 +15,146 @@
   --snd-bf-color: #262b40;
   --text-color: #fff;
   --main-color: #59b2f4;
+  --lightthemebg: #f5f7fa;
+  --lighthemeText: #171f38;
+  --lightthemesndbg: #c0c1c3;
+  --lightthemeMain: #0d5185;
+}
+
+body[data-theme="dark"] {
+  .header a {
+    color: var(--text-color);
+  }
+  .input-box input {
+    background-color: var(--snd-bf-color);
+  }
+  textarea {
+    background-color: var(--snd-bf-color);
+  }
+}
+
+body[data-theme="light"] {
+  .header a {
+    color: var(--lighthemeText);
+  }
+  .header {
+    background-color: var(--lightthemebg);
+  }
+  background-color: var(--lightthemebg);
+  color: var(--lighthemeText);
+  .about {
+    background-color: var(--lightthemesndbg);
+  }
+  .portfolio {
+    background-color: var(--lightthemesndbg);
+  }
+  .services-box {
+    background-color: var(--lightthemesndbg);
+    border: 0.2rem solid var(--lightthemesndbg);
+  }
+  .input-box input {
+    background-color: var(--lightthemesndbg);
+  }
+  textarea {
+    background-color: var(--lightthemesndbg);
+  }
+  .footer {
+    background-color: var(--lightthemesndbg);
+  }
+  .btn {
+    color: var(--lightthemebg);
+    background-color: var(--lightthemeMain);
+    box-shadow: 0 0 1rem var(--lightthemeMain);
+  }
+  .btn:hover {
+    box-shadow: none;
+  }
+
+  .social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--lightthemeMain);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--lightthemeMain);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5 ease;
+  }
+  .social-media a:hover {
+    background: var(--lightthemeMain);
+    color: var(--lightthemebg);
+    box-shadow: 0 0 1rem var(--lightthemeMain);
+  }
+  @media (max-width: 768px) {
+    .home {
+      flex-direction: column;
+    }
+    .social-media a {
+      height: 3rem;
+      width: 3rem;
+    }
+    .Home-content {
+      font-size: 2.6rem;
+      order: 1;
+    }
+    .Home-content h1 {
+      font-size: 5rem;
+    }
+    .home-img img {
+      width: 90vw;
+      margin-top: 4rem;
+    }
+    .header {
+      flex-direction: row;
+      justify-content: space-between; /* Align logo and menu icon on opposite ends */
+      align-items: center;
+    }
+
+    #menu-icon {
+      display: block; /* Show the menu icon on smaller screens */
+    }
+
+    .navbar {
+      position: absolute; /* Position the navbar absolute for easier control */
+      top: 30px; /* Adjust based on your header height */
+      right: 0;
+      background-color: var(--lightthemebg);
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease; /* Smooth transition for menu opening */
+    }
+
+    .navbar.open {
+      height: auto; /* Expand height to show menu when .open class is applied */
+    }
+
+    .navbar a {
+      padding: 1rem;
+      width: 100%;
+      text-align: left; /* Align text to the left */
+    }
+
+    .about {
+      flex-direction: column;
+    }
+    .about-img img {
+      width: 90vw;
+      margin-top: 4rem;
+    }
+    .services h2 {
+      margin-bottom: 3rem;
+    }
+  }
+  span {
+    color: var(--lightthemeMain);
+  }
 }
 .section {
   min-height: 100vh;
@@ -22,11 +162,11 @@
 }
 .header {
   position: sticky;
+  background-color: var(--bg-color);
   top: 0;
   left: 0;
   width: 100%;
   padding: 2rem 9%;
-  background: var(--bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,13 +176,13 @@
 
 .logo {
   font-size: 2.5rem;
-  color: var(--text-color);
+
   font-weight: 700;
   cursor: default;
 }
 .navbar a {
   font-size: 1.2rem;
-  color: var(--text-color);
+
   margin-left: 2rem;
   font-weight: 700;
 }
@@ -56,7 +196,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color);
+
   padding-left: 10vh;
   padding-bottom: 4vw;
   padding-top: 4vw;
@@ -310,8 +450,7 @@ html {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.6rem;
-  color: var(--text-color);
-  background: var(--snd-bf-color);
+
   border-radius: 0.8rem;
   margin: 0.7rem 0;
 }
@@ -470,8 +609,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--bg-color);
-  color: #fff;
+
   position: fixed;
   width: 100%;
   top: 0;
@@ -498,7 +636,7 @@ html {
 
 .navbar a {
   text-decoration: none;
-  color: #fff;
+
   padding: 0.5rem 1rem;
 }
 
@@ -567,7 +705,6 @@ html {
     top: 100%; /* Position the navbar absolute for easier control */
     /* Adjust based on your header height */
     right: 0;
-    background-color: var(--bg-color);
     flex-direction: column;
     align-items: flex-start;
     width: 100%;

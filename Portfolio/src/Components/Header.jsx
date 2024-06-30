@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css"; // Import CSS file for header styles
 import { useState } from "react";
-
+import Darkmode from "./DarkMode";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu open/close
 
@@ -17,6 +17,7 @@ const Header = () => {
       <a href="#" className="logo">
         Portfolio
       </a>
+      <Darkmode></Darkmode>
       <FontAwesomeIcon
         icon={faBars}
         id="menu-icon"

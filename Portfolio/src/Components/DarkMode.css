@@ -1,0 +1,31 @@
+/* DarkMode.css */
+
+.dark_mode {
+  display: flex;
+  align-items: center;
+}
+
+.dark_mode_input {
+  display: none;
+}
+
+.dark_mode_label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dark_mode_label .icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.sun {
+  color: #ffcc33; /* Sun color */
+}
+
+.moon {
+  color: #ffffff; /* Moon color */
+}
