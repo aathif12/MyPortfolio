@@ -1,7 +1,7 @@
 import React from "react";
 import "./DarkMode.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"; // Free icons
 
 const Darkmode = () => {
   const setDarkMode = () => {
@@ -28,13 +28,9 @@ const Darkmode = () => {
         id="darkmode-toggle"
         onChange={toggleTheme}
       />
-      <label
-        for="checkbox"
-        className="dark_mode_label"
-        htmlFor="darkmode-toggle"
-      >
-        <FontAwesomeIcon icon={faSun} className="fa-sun " />
-        <FontAwesomeIcon icon={faMoon} className="fa-moon" />
+      <label htmlFor="darkmode-toggle" className="dark_mode_label">
+        <FontAwesomeIcon icon={faSun} className="sun" />
+        <FontAwesomeIcon icon={faMoon} className="moon" />
         <span className="ball"></span>
       </label>
     </div>
