@@ -107,6 +107,9 @@ body[data-theme="light"] {
   .portfolio-box:hover .portfolio-layer {
     transform: translateY(0);
   }
+  .navbar {
+    background-color: var(--lightthemebg);
+  }
 
   .social-media a {
     display: inline-flex;
@@ -153,70 +156,7 @@ body[data-theme="light"] {
     transform: translateY(100%);
     transition: 0.5 ease;
   }
-  @media (max-width: 768px) {
-    .home {
-      flex-direction: column;
-    }
-    .social-media a {
-      height: 3rem;
-      width: 3rem;
-    }
-    .Home-content {
-      font-size: 2.6rem;
-      order: 1;
-    }
-    .Home-content h1 {
-      font-size: 5rem;
-    }
-    .home-img img {
-      width: 90vw;
-      margin-top: 4rem;
-    }
-    .header {
-      flex-direction: row;
-      justify-content: space-between; /* Align logo and menu icon on opposite ends */
-      align-items: center;
-    }
 
-    #menu-icon {
-      display: block; /* Show the menu icon on smaller screens */
-    }
-
-    .navbar {
-      position: absolute; /* Position the navbar absolute for easier control */
-      top: 30px; /* Adjust based on your header height */
-      right: 0;
-      background-color: var(--lightthemebg);
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      height: 0;
-      overflow: hidden;
-      transition: height 0.3s ease; /* Smooth transition for menu opening */
-    }
-
-    .navbar.open {
-      height: auto; /* Expand height to show menu when .open class is applied */
-    }
-
-    .navbar a {
-      padding: 1rem;
-      width: 100%;
-      text-align: left; /* Align text to the left */
-    }
-
-    .about {
-      flex-direction: column;
-    }
-
-    .about-img img {
-      width: 90vw;
-      margin-top: 4rem;
-    }
-    .services h2 {
-      margin-bottom: 3rem;
-    }
-  }
   span {
     color: var(--lightthemeMain);
   }
@@ -543,6 +483,46 @@ html {
   padding: 2rem 9%;
   background: var(--snd-bf-color);
 }
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#menu-icon {
+  display: none; /* Initially hide the menu icon on larger screens */
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  position: absolute;
+  right: 0%;
+  background-color: var(--bg-color);
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
 
 .footer-text {
   font-size: 1.6rem;
@@ -566,151 +546,122 @@ html {
 .Angle {
   font-size: 2.4rem;
 }
+/* Large devices (max-width: 1200px) */
 @media (max-width: 1200px) {
-  .header {
-    padding: 2rem 3%;
+  .dark_mode {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 5%;
   }
-  section {
-    padding: 10rem 3%;
+  .dark_mode_label {
+    width: 25px;
+    height: 25px;
   }
-  .services {
-    padding: 7rem;
-  }
-  .portfolio {
-    padding-bottom: 7rem;
-  }
-  .contact {
-    min-height: auto;
-  }
+
+  .header,
   .footer {
     padding: 2rem 3%;
   }
+
+  section {
+    padding: 10rem 3%;
+  }
+
+  .services,
+  .portfolio {
+    padding: 7rem 3%;
+  }
+
+  .contact {
+    min-height: auto;
+  }
 }
+
+/* Medium devices (max-width: 768px) */
 @media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
   .home {
     flex-direction: column;
+  }
+  .dark_mode_label {
+    width: 10px;
+  }
+  .dark_mode {
+    width: 10px;
+    height: 10px;
+    position: fixed;
+    right: 0%;
+  }
+  .ball {
+    width: 20px;
+    height: 20px;
   }
 
   .Home-content {
     font-size: 2.6rem;
     order: 1;
   }
+
   .Home-content h1 {
     font-size: 5rem;
   }
-  .home-img img {
+
+  .home-img img,
+  .about-img img {
     width: 90vw;
     margin-top: 4rem;
   }
+
   .header {
     flex-direction: row;
-    justify-content: space-between; /* Align logo and menu icon on opposite ends */
+    justify-content: space-between;
     align-items: center;
   }
 
   #menu-icon {
-    display: block; /* Show the menu icon on smaller screens */
+    display: block;
+    position: absolute;
+    right: 2%;
   }
 
   .navbar {
-    position: absolute; /* Position the navbar absolute for easier control */
-    top: 60px; /* Adjust based on your header height */
+    position: absolute;
+    top: 100%;
     right: 0;
-    background-color: var(--bg-color);
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
     height: 0;
     overflow: hidden;
-    transition: height 0.3s ease; /* Smooth transition for menu opening */
+    transition: height 0.3s ease;
   }
 
   .navbar.open {
-    height: auto; /* Expand height to show menu when .open class is applied */
+    height: auto;
   }
 
   .navbar a {
     padding: 1rem;
     width: 100%;
-    text-align: left; /* Align text to the left */
+    text-align: left;
   }
 
   .about {
     flex-direction: column;
   }
-  .about-img img {
-    width: 90vw;
-    margin-top: 4rem;
-  }
+
   .services h2 {
     margin-bottom: 3rem;
   }
+
   .portfolio-container {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-@media (max-width: 617px) {
-  .portfolio-container {
-    grid-template-columns: 1fr;
-  }
-  .home-img img {
-    width: 80vw;
-    margin-top: 8rem;
-  }
-  .about-img img {
-    width: 100vw;
-    margin-top: 4rem;
-  }
-}
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
-  .contact from .input-box input {
-    width: 100%;
-  }
-}
-html {
-  scroll-behavior: smooth;
-}
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-#menu-icon {
-  display: none; /* Initially hide the menu icon on larger screens */
-  cursor: pointer;
-  font-size: 1.5rem;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar a {
-  text-decoration: none;
-
-  padding: 0.5rem 1rem;
-}
-
-@media (max-width: 768px) {
   .portfolio-box {
     width: 45%;
   }
@@ -730,8 +681,38 @@ html {
   .aathi {
     font-size: 1.2em;
   }
+  .contact {
+    padding-left: 5vh;
+    padding-bottom: 4vw;
+    padding-top: 4vw;
+    padding-right: 5vh;
+  }
 }
 
+/* Small devices (max-width: 617px) */
+@media (max-width: 617px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .home-img img,
+  .about-img img {
+    width: 80vw;
+    margin-top: 1rem;
+  }
+  .dark_mode {
+    height: 10px;
+    width: 10px;
+  }
+  .contact {
+    padding-left: 5vh;
+    padding-bottom: 4vw;
+    padding-top: 4vw;
+    padding-right: 5vh;
+  }
+}
+
+/* Extra small devices (max-width: 480px) */
 @media (max-width: 480px) {
   .portfolio-box {
     width: 100%;
@@ -756,40 +737,9 @@ html {
   .aathi {
     font-size: 1em;
   }
-}
+  .contact {
+    padding-left: 1vh;
 
-/* Media query for mobile layout */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between; /* Align logo and menu icon on opposite ends */
-    align-items: center;
-  }
-
-  #menu-icon {
-    display: block; /* Show the menu icon on smaller screens */
-  }
-
-  .navbar {
-    position: -ms-page;
-    top: 100%; /* Position the navbar absolute for easier control */
-    /* Adjust based on your header height */
-    right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s ease; /* Smooth transition for menu opening */
-  }
-
-  .navbar.open {
-    height: auto; /* Expand height to show menu when .open class is applied */
-  }
-
-  .navbar a {
-    padding: 1rem;
-    width: 100%;
-    text-align: left; /* Align text to the left */
+    padding-right: 1vh;
   }
 }
