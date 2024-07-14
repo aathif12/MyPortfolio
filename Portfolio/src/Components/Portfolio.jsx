@@ -1,12 +1,7 @@
-import img1 from "../assets/1.jpg";
-import img2 from "../assets/2.jpg";
-import img3 from "../assets/3.jpg";
-import img4 from "../assets/4.jpg";
-import img5 from "../assets/5.jpg";
-import img6 from "../assets/6.jpg";
 import Bookme from "../assets/Bookme.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import Wolverine from "../assets/Wolverine.png";
 const Portfolio = () => {
   return (
     <section className="portfolio">
@@ -40,8 +35,37 @@ const Portfolio = () => {
             </a>
           </div>
         </div>
-        {/* <div className="portfolio-box">
-          <img src={img3} alt="" className="portimg" />
+        <div className="portfolio-box">
+          <img src={Wolverine} alt="" className="portimg" />
+          <div className="portfolio-layer">
+            <h4>Portfolio Design</h4>
+            <p>
+              Each project represents a unique challenge and an opportunity to
+              create innovative, user-friendly web experiences. With a focus on
+              intuitive design and seamless functionality.
+            </p>
+            <a href="https://www.figma.com/proto/KOJyHmCYbd0giMpuxG0yN1/Portfolio?t=mC3DMkwKheO1JDic-1">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
+          </div>
+        </div>
+        <div className="portfolio-box">
+          <img src={Wolverine} alt="" className="portimg" />
+          <div className="portfolio-layer">
+            <h4>Portfolio </h4>
+            <p>
+              This repository hosts my portfolio website showcasing projects
+              that highlight innovative, user-friendly web experiences. Focused
+              on intuitive design and seamless functionality, it demonstrates my
+              skills in crafting effective digital solutions
+            </p>
+            <a href="">
+              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
+            </a>
+          </div>
+        </div>
+        <div className="portfolio-box">
+          <img src={""} alt="" className="portimg" />
           <div className="portfolio-layer">
             <h4>Web Design</h4>
             <p>
@@ -54,7 +78,7 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="portfolio-box">
-          <img src={img4} alt="" className="portimg" />
+          <img src={""} alt="" className="portimg" />
           <div className="portfolio-layer">
             <h4>Web Design</h4>
             <p>
@@ -66,32 +90,6 @@ const Portfolio = () => {
             </a>
           </div>
         </div>
-        <div className="portfolio-box">
-          <img src={img5} alt="" className="portimg" />
-          <div className="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>
-              Each project represents a unique challenge and an opportunity to
-              create innovative, user-friendly web experiences.
-            </p>
-            <a href="">
-              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-box">
-          <img src={img6} alt="" className="portimg" />
-          <div className="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>
-              Each project represents a unique challenge and an opportunity to
-              create innovative, user-friendly web experiences.
-            </p>
-            <a href="">
-              <FontAwesomeIcon className="aathi" icon={faUpRightFromSquare} />
-            </a>
-          </div>
-        </div> */}
       </div>
     </section>
   );

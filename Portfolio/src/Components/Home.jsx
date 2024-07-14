@@ -57,8 +57,8 @@ const Home = () => {
         </a>
       </div>
       <div className="home-img">
-        <img className="homImg" src={aathif} alt="Aathif Ahamed" />
-        <img className="homImg1" src={aathif1} alt="Aathif Ahamed" />
+        <img className="homImg" src={aathif1} alt="Aathif Ahamed" />
+        <img className="homImg1" src={aathif} alt="Aathif Ahamed" />
       </div>
     </section>
   );
