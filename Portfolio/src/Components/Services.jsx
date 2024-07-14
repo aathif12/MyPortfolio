@@ -26,9 +26,10 @@ const Services = () => {
           <FontAwesomeIcon className="Servciesicon" icon={faPalette} />
           <h3>UI/UX Design</h3>
           <p>
-            Crafting intuitive and visually appealing digital experiences that
-            exceed user expectations through research, wireframing, and
-            prototyping.
+            Crafting intuitive, visually appealing digital experiences that
+            exceed user expectations through extensive research, meticulous
+            wireframing, and iterative prototyping, aiming to create
+            user-centric designs that delight.
           </p>
           <a href="#" className="btn">
             Read more
