@@ -84,7 +84,7 @@ const Portfolio = () => {
           marginTop: "20px",
           paddingBottom: "50px",
           display: "flex",
-          gap: "10px",
+          gap: "20px",
           justifyContent: "center",
           alignItems: "center",
         }}
