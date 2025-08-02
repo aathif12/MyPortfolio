@@ -50,7 +50,7 @@ const Home = () => {
           </a>
         </div>
         <a
-          href="https://drive.google.com/file/d/1zQjoc-HpXn_A0T5VLUJQG4ONwHvaCQUS/view?usp=sharing"
+          href="https://drive.google.com/file/d/1vBWKytGeYgq9VvT8C1XQBhuvy_G6ODNy/view?usp=sharing"
           className="btn"
         >
           Download CV
