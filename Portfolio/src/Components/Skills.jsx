@@ -81,7 +81,7 @@ export default function Skills() {
             <span className="icon-title">PHP</span>
           </div>
           <div className="icon-container">
-            <SiC color="#A8B9CC" className="tech-icon" />
+            <SiC color="#004482" className="tech-icon" />
             <span className="icon-title">C</span>
           </div>
         </div>

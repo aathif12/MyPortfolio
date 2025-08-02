@@ -32,7 +32,7 @@ const Header = () => {
           About
         </a>
         <a href="#skills" onClick={() => setIsMenuOpen(false)}>
-          Services
+          Skills
         </a>
         <a href="#portfolio" onClick={() => setIsMenuOpen(false)}>
           Portfolio

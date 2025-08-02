@@ -5,7 +5,8 @@ import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Wolverine from "../assets/Wolverine.svg";
 import { faGithub, faFigma } from "@fortawesome/free-brands-svg-icons";
 import fitnest from "../assets/fitnest.svg";
-
+import uniBond from "../assets/uniBond.png";
+import logo from "../assets/logo.png";
 const projects = [
   {
     id: 1,
@@ -57,8 +58,35 @@ const projects = [
     title: "Mobile Application",
     category: "project",
     img: fitnest,
-    desc: "Each project represents a unique challenge and an opportunity to create innovative, user-friendly web experiences.",
+    desc: "Unibond is a mobile application that connects University of Vavuniya undergraduates and alumni to share jobs, skills, and projects,",
     link: "",
+    icon: faGithub,
+  },
+  {
+    id: 7,
+    title: "Mobile Design",
+    category: "design",
+    img: uniBond,
+    desc: "Each project represents a unique challenge and an opportunity to create innovative, user-friendly web experiences.",
+    link: "https://www.figma.com/design/e7WcPNOHj07GbUcE1DBLCk/UniBond?node-id=0-1&t=1tIFRu7uaNLtOliN-1",
+    icon: faFigma,
+  },
+  {
+    id: 8,
+    title: "Mobile Application",
+    category: "project",
+    img: uniBond,
+    desc: "Unibond is a mobile application that connects University of Vavuniya undergraduates and alumni to share jobs, skills, and projects.",
+    link: "https://github.com/Jellorine/UniBond.git",
+    icon: faGithub,
+  },
+  {
+    id: 9,
+    title: "E-Commerce Application",
+    category: "project",
+    img: logo,
+    desc: "Crafthaven is an e-commerce platform that connects local artisans with customers, promoting handmade products and sustainable practices.",
+    link: "https://github.com/aathif12/crafthaven.git",
     icon: faGithub,
   },
 ];
@@ -88,6 +116,7 @@ const Portfolio = () => {
           justifyContent: "center",
           alignItems: "center",
         }}
+        className="filter-buttons"
       >
         <button className="btn" onClick={() => setFilter("all")}>
           All
