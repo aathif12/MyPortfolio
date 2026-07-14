@@ -1361,3 +1361,468 @@ body[data-theme="light"] {
     color: var(--lightthemeMain);
   }
 }
+
+/* ── Storage Info Banner ── */
+.gd-storage-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(89, 178, 244, 0.08);
+  border: 0.1rem solid rgba(89, 178, 244, 0.25);
+  border-radius: 0.9rem;
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+.gd-storage-info svg {
+  color: var(--main-color);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+.gd-storage-info code {
+  background: rgba(89, 178, 244, 0.15);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--main-color);
+}
+
+/* ── Taurgo Section ── */
+.gd-section-taurgo {
+  border: 0.15rem solid rgba(196, 126, 244, 0.35);
+}
+.gd-section-taurgo .gd-section-header {
+  background: rgba(196, 126, 244, 0.08);
+  border-bottom-color: rgba(196, 126, 244, 0.2);
+}
+.gd-section-taurgo .gd-section-title {
+  color: #c47ef4;
+}
+
+.gd-taurgo-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(196, 126, 244, 0.15);
+  color: #c47ef4;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(196, 126, 244, 0.4);
+  white-space: nowrap;
+}
+
+.gd-taurgo-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 0.6rem 1.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(196, 126, 244, 0.04);
+  border-bottom: 0.1rem solid rgba(196, 126, 244, 0.1);
+}
+
+.gd-tour-btn {
+  background: rgba(196, 126, 244, 0.12) !important;
+  border-color: #c47ef4 !important;
+  color: #c47ef4 !important;
+  font-weight: 700;
+}
+.gd-tour-btn:hover {
+  background: #c47ef4 !important;
+  color: #fff !important;
+}
+
+/* ── Type Badge ── */
+.gd-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.65rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 0.1rem solid;
+  width: fit-content;
+  margin-bottom: 0.2rem;
+}
+
+/* ── Kuula iframe ── */
+.gd-iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: unset;
+  border: none;
+  display: block;
+  pointer-events: auto;
+}
+
+/* ── Link card (external link item) ── */
+.gd-link-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  height: 100%;
+  background: rgba(89, 178, 244, 0.05);
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.gd-link-card:hover {
+  background: rgba(89, 178, 244, 0.15);
+}
+.gd-link-icon {
+  font-size: 2.5rem;
+  opacity: 0.7;
+}
+
+/* ── Link / Tour Modal ── */
+.gd-link-modal {
+  background: var(--snd-bf-color);
+  border-radius: 1.4rem;
+  padding: 2rem;
+  width: min(520px, 92vw);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+.gd-link-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gd-link-modal-header h3 {
+  font-size: 1.25rem;
+  color: var(--main-color);
+  margin: 0;
+}
+.gd-link-modal-type-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.gd-type-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 2rem;
+  border: 0.12rem solid rgba(89,178,244,0.35);
+  background: transparent;
+  color: var(--text-color);
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.22s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.gd-type-btn:hover,
+.gd-type-btn.active {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  color: var(--bg-color);
+}
+.gd-modal-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+.gd-modal-hint {
+  font-size: 0.85rem;
+  color: #7ecfb3;
+  background: rgba(126, 207, 179, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  margin: 0;
+}
+.gd-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+/* Light theme additions */
+body[data-theme="light"] {
+  .gd-storage-info {
+    background: rgba(13, 81, 133, 0.06);
+    border-color: rgba(13, 81, 133, 0.2);
+    color: var(--lighthemeText);
+  }
+  .gd-storage-info svg {
+    color: var(--lightthemeMain);
+  }
+  .gd-storage-info code {
+    background: rgba(13, 81, 133, 0.1);
+    color: var(--lightthemeMain);
+  }
+  .gd-link-modal {
+    background: var(--lightthemesndbg);
+  }
+  .gd-type-btn {
+    color: var(--lighthemeText);
+    border-color: rgba(13, 81, 133, 0.3);
+  }
+  .gd-type-btn:hover,
+  .gd-type-btn.active {
+    background: var(--lightthemeMain);
+    border-color: var(--lightthemeMain);
+    color: var(--lightthemebg);
+  }
+  .gd-modal-label {
+    color: var(--lighthemeText);
+  }
+  .gd-link-modal-header h3 {
+    color: var(--lightthemeMain);
+  }
+  .gd-section-taurgo {
+    border-color: rgba(196, 126, 244, 0.4);
+  }
+}
+
+/* ── Folder tag shown in section header ── */
+.gd-folder-tag {
+  font-size: 0.75rem;
+  color: var(--text-color);
+  opacity: 0.45;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 260px;
+}
+
+/* ── Saved path label shown on each card ── */
+.gd-saved-path {
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: var(--text-color);
+  opacity: 0.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  margin-top: 0.1rem;
+}
+
+/* ── Upload spinner button state ── */
+.gd-action-btn[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ── Spin animation for FontAwesome spinner ── */
+@keyframes fa-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.fa-spin {
+  animation: fa-spin 0.8s linear infinite;
+}
+
+/* Light theme extras */
+body[data-theme="light"] {
+  .gd-folder-tag  { color: var(--lighthemeText); }
+  .gd-saved-path  { color: var(--lighthemeText); }
+}
+
+/* ── Taurgo Toolbar (3 upload buttons) ── */
+.gd-taurgo-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 1.6rem;
+  background: rgba(196, 126, 244, 0.04);
+  border-bottom: 0.1rem solid rgba(196, 126, 244, 0.1);
+}
+
+.gd-taurgo-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 2rem;
+  border: 0.12rem solid;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.gd-taurgo-upload-btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+/* Floor plan button — green */
+.gd-floorplan-btn {
+  background: rgba(126, 207, 179, 0.12);
+  border-color: #7ecfb3;
+  color: #7ecfb3;
+}
+.gd-floorplan-btn:hover:not([disabled]) {
+  background: #7ecfb3;
+  color: #191f36;
+}
+
+/* 2D Photo button — blue */
+.gd-photo-btn {
+  background: rgba(89, 178, 244, 0.12);
+  border-color: #59b2f4;
+  color: #59b2f4;
+}
+.gd-photo-btn:hover:not([disabled]) {
+  background: #59b2f4;
+  color: #191f36;
+}
+
+/* Virtual tour button — purple */
+.gd-tour-upload-btn {
+  background: rgba(196, 126, 244, 0.12);
+  border-color: #c47ef4;
+  color: #c47ef4;
+}
+.gd-tour-upload-btn:hover:not([disabled]) {
+  background: #c47ef4;
+  color: #fff;
+}
+
+/* ── Folder Info Row ── */
+.gd-taurgo-folders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 0.5rem 1.6rem;
+  font-size: 0.78rem;
+  color: var(--text-color);
+  opacity: 0.55;
+  border-bottom: 0.1rem solid rgba(196, 126, 244, 0.08);
+}
+.gd-taurgo-folders code {
+  font-size: 0.76rem;
+  background: rgba(89,178,244,0.1);
+  padding: 0.05rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+/* ── Filter Tab Bar ── */
+.gd-taurgo-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-bottom: 0.1rem solid rgba(196, 126, 244, 0.12);
+  background: rgba(196, 126, 244, 0.03);
+}
+
+.gd-taurgo-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  border: 0.12rem solid rgba(196, 126, 244, 0.3);
+  background: transparent;
+  color: var(--text-color);
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+.gd-taurgo-tab:hover {
+  border-color: #c47ef4;
+  color: #c47ef4;
+}
+.gd-taurgo-tab.active {
+  background: #c47ef4;
+  border-color: #c47ef4;
+  color: #fff;
+  box-shadow: 0 0 0.7rem rgba(196, 126, 244, 0.5);
+}
+
+.gd-tab-count {
+  background: rgba(255,255,255,0.2);
+  border-radius: 1rem;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  min-width: 1.4rem;
+  text-align: center;
+}
+.gd-taurgo-tab.active .gd-tab-count {
+  background: rgba(255,255,255,0.3);
+}
+
+/* ── Empty-state path hints ── */
+.gd-empty-paths {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+.gd-empty-paths code {
+  background: rgba(89,178,244,0.12);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* Light theme for Taurgo toolbar */
+body[data-theme="light"] {
+  .gd-taurgo-toolbar    { background: rgba(13,81,133,0.04); border-color: rgba(13,81,133,0.1); }
+  .gd-taurgo-folders    { color: var(--lighthemeText); border-color: rgba(13,81,133,0.08); }
+  .gd-taurgo-filter-bar { background: rgba(196,126,244,0.04); }
+  .gd-taurgo-tab        { color: var(--lighthemeText); border-color: rgba(196,126,244,0.3); }
+  .gd-taurgo-tab.active { color: #fff; }
+  .gd-floorplan-btn     { color: #5aac7a; border-color: #5aac7a; background: rgba(90,172,122,0.08); }
+  .gd-photo-btn         { color: var(--lightthemeMain); border-color: var(--lightthemeMain); background: rgba(13,81,133,0.07); }
+  .gd-tour-upload-btn   { color: #a055d4; border-color: #a055d4; background: rgba(160,85,212,0.07); }
+}
+
+/* ── Generic typed section (campaign, taurgo, etc.) ── */
+.gd-section-typed {
+  border: 0.15rem solid rgba(128,128,128,0.2);
+}
+.gd-section-typed .gd-section-header {
+  background: rgba(128,128,128,0.05);
+}
+
+/* Section badge (e.g. "🗳️ Campaign", "🏠 Taurgo") */
+.gd-section-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  border: 0.1rem solid;
+  white-space: nowrap;
+}
+
+/* Upload button hover — uses inline style color, override for :hover */
+.gd-taurgo-upload-btn:hover:not([disabled]) {
+  filter: brightness(1.15);
+  color: #191f36 !important;
+}
+
+/* Light theme: typed section */
+body[data-theme="light"] {
+  .gd-section-typed {
+    background: var(--lightthemesndbg);
+    border-color: rgba(0,0,0,0.08);
+  }
+  .gd-section-typed .gd-section-header {
+    background: rgba(0,0,0,0.03);
+  }
+  .gd-section-badge {
+    opacity: 0.85;
+  }
+}
