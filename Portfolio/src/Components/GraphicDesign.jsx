@@ -56,6 +56,16 @@ const SECTION_CONFIGS = {
     ],
     filterKeys: ["all", "floorplan", "image", "virtual"],
   },
+  "freelanced-posters-design": {
+    badge: "🎨 Freelance",
+    accentColor: "#5aac7a",
+    uploadTypes: [
+      { key: "poster", label: "Upload Posters",   icon: faPalette, color: "#f4d259", folder: "posters",   accept: "image/*" },
+      { key: "image",  label: "Upload 2D Photos", icon: faCamera,  color: "#59b2f4", folder: "2d-photos", accept: "image/*" },
+      { key: "video",  label: "Upload Videos",    icon: faVideo,   color: "#f4a259", folder: "videos",    accept: "video/*" },
+    ],
+    filterKeys: ["all", "poster", "image", "video"],
+  },
 };
 
 // ── Default sections ──────────────────────────────────────────────────────────
@@ -63,11 +73,28 @@ const DEFAULT_SECTIONS = [
   { id: "parliament-election-2025", title: "Parliament Election Campaign 2025", items: [] },
   { id: "local-election-2025",      title: "Local Election 2025",               items: [] },
   { id: "taurgo",                   title: "Taurgo",                            items: [] },
+  { id: "freelanced-posters-design",title: "Freelanced Posters Design",         items: [] },
 ];
 
 // ── localStorage helpers ──────────────────────────────────────────────────────
 const loadSections = () => {
-  try { const r = localStorage.getItem(STORAGE_KEY); if (r) return JSON.parse(r); } catch {}
+  try {
+    // Try current version first
+    let r = localStorage.getItem(STORAGE_KEY);
+    if (!r) {
+      // Fallback: migrate from previous versions if available
+      r = localStorage.getItem("gd_sections_meta_v4") || 
+          localStorage.getItem("gd_sections_meta_v3") || 
+          localStorage.getItem("gd_design_sections_v2");
+    }
+    if (r) {
+      const parsed = JSON.parse(r);
+      // Merge in any missing default sections
+      const existingIds = new Set(parsed.map((s) => s.id));
+      const missingDefaults = DEFAULT_SECTIONS.filter((ds) => !existingIds.has(ds.id));
+      return [...parsed, ...missingDefaults];
+    }
+  } catch {}
   return DEFAULT_SECTIONS;
 };
 const saveSections = (s) => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {} };
@@ -148,6 +175,58 @@ const GraphicDesign = () => {
       setUploading((p) => ({ ...p, [uploadPath]: false }));
     }
   };
+
+  // ── Sync from Disk ────────────────────────────────────────────────────────
+  const syncFromDisk = async () => {
+    try {
+      const res = await fetch("/api/scan");
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!data.files || !data.files.length) return;
+
+      setSections((prev) => {
+        let updated = false;
+        const newSections = prev.map((s) => {
+          let newItems = [...s.items];
+          // Find files that belong to this section based on URL path
+          const sectionFiles = data.files.filter((f) => f.url.startsWith(`/designs/${s.id}/`));
+          
+          for (const f of sectionFiles) {
+            // Check if we already have it
+            if (!newItems.find((i) => i.src === f.url || i.savedPath === f.url)) {
+              updated = true;
+              let itemType = f.type; // default to image/video based on extension
+              // Try to map folder name to type using SECTION_CONFIGS
+              const config = SECTION_CONFIGS[s.id];
+              if (config && config.uploadTypes) {
+                const subFolderMatch = f.url.split(`/designs/${s.id}/`)[1]?.split("/")[0];
+                const matchedType = config.uploadTypes.find((t) => t.folder === subFolderMatch);
+                if (matchedType) itemType = matchedType.key;
+              }
+
+              newItems.push({
+                id: `item-sync-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+                src: f.url,
+                type: itemType,
+                title: f.filename.replace(/\.[^/.]+$/, ""),
+                desc: "",
+                savedPath: f.url,
+              });
+            }
+          }
+          return { ...s, items: newItems };
+        });
+        return updated ? newSections : prev;
+      });
+    } catch (err) {
+      console.warn("Disk sync failed:", err);
+    }
+  };
+
+  // Run disk sync on load
+  useEffect(() => {
+    syncFromDisk();
+  }, []);
 
   // ── Add link / virtual tour ───────────────────────────────────────────────
   const addLinkItem = (sectionId) => {

@@ -76,6 +76,49 @@ const uploadPlugin = {
         res.end(JSON.stringify({ files: savedFiles }))
       })
     })
+
+    // ── Folder Scanner ──
+    server.middlewares.use('/api/scan', (req, res) => {
+      if (req.method !== 'GET') return
+
+      const baseDir = path.resolve('public', 'designs')
+      if (!fs.existsSync(baseDir)) {
+        res.setHeader('Content-Type', 'application/json')
+        res.end(JSON.stringify({ files: [] }))
+        return
+      }
+
+      const allFiles = []
+      const scanDir = (currentPath) => {
+        const items = fs.readdirSync(currentPath)
+        for (const item of items) {
+          const fullPath = path.join(currentPath, item)
+          const stat = fs.statSync(fullPath)
+          if (stat.isDirectory()) {
+            scanDir(fullPath)
+          } else {
+            // Get relative path from public folder: e.g. /designs/taurgo/floor-plans/img.jpg
+            const relPath = '/' + path.relative(path.resolve('public'), fullPath).replace(/\\/g, '/')
+            allFiles.push({
+              url: relPath,
+              filename: item,
+              // basic type detection
+              type: item.match(/\.(mp4|webm|ogg)$/i) ? 'video' : 'image',
+            })
+          }
+        }
+      }
+
+      try {
+        scanDir(baseDir)
+        res.setHeader('Content-Type', 'application/json')
+        res.end(JSON.stringify({ files: allFiles }))
+      } catch (err) {
+        res.statusCode = 500
+        res.setHeader('Content-Type', 'application/json')
+        res.end(JSON.stringify({ error: err.message }))
+      }
+    })
   },
 }
 
