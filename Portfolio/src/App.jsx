@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import About from "./Components/About";
+import Experience from "./Components/Experience";
+import Education from "./Components/Education";
 import Portfolio from "./Components/Portfolio";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
@@ -18,6 +20,8 @@ function App() {
       <section id="about">
         <About />
       </section>
+      <Experience />
+      <Education />
       <section id="skills">
         <Skills />
       </section>

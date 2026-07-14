@@ -31,6 +31,12 @@ const Header = () => {
         <a href="#about" onClick={() => setIsMenuOpen(false)}>
           About
         </a>
+        <a href="#experience" onClick={() => setIsMenuOpen(false)}>
+          Experience
+        </a>
+        <a href="#education" onClick={() => setIsMenuOpen(false)}>
+          Education
+        </a>
         <a href="#skills" onClick={() => setIsMenuOpen(false)}>
           Skills
         </a>
