@@ -20,7 +20,7 @@ const Home = () => {
           And I'm a{" "}
           <span>
             <ReactTyped
-              strings={["Web Developer", "UI/UX Designer", "App Developer"]}
+              strings={["Web Developer", "Graphic Designer", "App Developer"]}
               typeSpeed={100}
               backSpeed={50}
               backDelay={1000}
