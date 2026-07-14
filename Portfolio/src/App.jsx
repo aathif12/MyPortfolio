@@ -6,6 +6,7 @@ import Portfolio from "./Components/Portfolio";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Skills from "./Components/Skills";
+import GraphicDesign from "./Components/GraphicDesign";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
       </section>
       <section id="portfolio">
         <Portfolio />
+      </section>
+      <section id="graphic-design">
+        <GraphicDesign />
       </section>
       <section id="contact">
         <Contact />

@@ -37,6 +37,9 @@ const Header = () => {
         <a href="#portfolio" onClick={() => setIsMenuOpen(false)}>
           Portfolio
         </a>
+        <a href="#graphic-design" onClick={() => setIsMenuOpen(false)}>
+          Design
+        </a>
         <a href="#contact" onClick={() => setIsMenuOpen(false)}>
           Contact
         </a>

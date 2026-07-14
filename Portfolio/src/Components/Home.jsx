@@ -20,7 +20,7 @@ const Home = () => {
           And I'm a{" "}
           <span>
             <ReactTyped
-              strings={["Web Developer", "Graphic Designer", "App Developer"]}
+              strings={["Graphic Designer", "Web Developer", "App Developer"]}
               typeSpeed={100}
               backSpeed={50}
               backDelay={1000}
@@ -29,10 +29,10 @@ const Home = () => {
           </span>
         </h3>
         <p>
-          "Transforming Ideas into Stunning Digital Realities – Aathif Ahamed,
-          Expert in Web Development, Ui/UX Design, and App Development. Crafting
-          Dynamic Websites, Intuitive Interfaces, and Engaging Mobile
-          Applications for Seamless User Experiences."
+          "Transforming Ideas into Stunning Visual Realities – Aathif Ahamed,
+          Expert in Graphic Design, Web Development, and App Development. Crafting
+          Compelling Visuals, Intuitive Interfaces, and Engaging Digital
+          Experiences that Leave a Lasting Impression."
         </p>
 
         <div className="social-media">

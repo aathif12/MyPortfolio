@@ -11,13 +11,13 @@ const About = () => {
         <h2 className="heading">
           About <span>Me</span>
         </h2>
-        <h3> Digital Experience Architect </h3>
+        <h3> Graphic Designer & Digital Creative </h3>
         <p>
-          Greetings! I'm Aathif Ahamed, a dedicated Ui/UX designer and web/app
-          developer. I specialize in transforming complex ideas into elegant,
-          user-friendly interfaces and developing robust, high-performance web
-          and mobile applications. My passion lies in crafting designs that not
-          only look stunning but also deliver seamless user experiences.
+          Greetings! I'm Aathif Ahamed, a dedicated Graphic Designer and web/app
+          developer. I specialize in transforming complex ideas into compelling
+          visual identities, stunning graphics, and user-friendly digital
+          experiences. My passion lies in crafting designs that not
+          only look stunning but also communicate effectively and leave a lasting impression.
         </p>
         <a href="#" className="btn">
           Read More
