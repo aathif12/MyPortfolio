@@ -5,6 +5,7 @@ import {
   faChevronDown, faChevronUp,
   faLink, faVrCardboard, faImage,
   faDraftingCompass, faFilter, faPalette, faCamera,
+  faBullhorn, faBuilding, faPaintBrush
 } from "@fortawesome/free-solid-svg-icons";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -23,7 +24,8 @@ const ITEM_TYPES = {
 // ── Per-section configuration ─────────────────────────────────────────────────
 const SECTION_CONFIGS = {
   "parliament-election-2025": {
-    badge: "🗳️ Campaign",
+    badgeText: "Campaign",
+    badgeIcon: faBullhorn,
     accentColor: "#f4d259",
     description: "2 designers worked together as a digital marketing team for Kader Mastan (full name K. Kader Mastan), a prominent Sri Lankan politician and Member of Parliament (MP) representing the Vanni Electoral District. He successfully won the election in 2025.",
     uploadTypes: [
@@ -34,7 +36,8 @@ const SECTION_CONFIGS = {
     filterKeys: ["all", "poster", "image", "video"],
   },
   "local-election-2025": {
-    badge: "🗳️ Campaign",
+    badgeText: "Campaign",
+    badgeIcon: faBullhorn,
     accentColor: "#f4d259",
     description: "Worked for him and his party, the Sri Lanka Labour Party, during the local elections.",
     uploadTypes: [
@@ -45,7 +48,8 @@ const SECTION_CONFIGS = {
     filterKeys: ["all", "poster", "image", "video"],
   },
   "taurgo": {
-    badge: "🏠 Taurgo",
+    badgeText: "Taurgo",
+    badgeIcon: faBuilding,
     accentColor: "#c47ef4",
     description: "Worked as a part-time Designer at Taurgo from Aug 2025 to present. Created Virtual Tours, edited 2D photos, and designed Floor Plans.",
     uploadTypes: [
@@ -56,7 +60,8 @@ const SECTION_CONFIGS = {
     filterKeys: ["all", "floorplan", "image", "virtual"],
   },
   "freelanced-posters-design": {
-    badge: "🎨 Freelance",
+    badgeText: "Freelance",
+    badgeIcon: faPaintBrush,
     accentColor: "#5aac7a",
     description: "Various freelance poster designs and related media.",
     uploadTypes: [
@@ -218,7 +223,7 @@ const GraphicDesign = () => {
   // ── Generic config-driven sub-typed section ───────────────────────────────
   const renderSubtypedSection = (sec) => {
     const config      = SECTION_CONFIGS[sec.id] || {};
-    const isCollapsed = collapsed[sec.id];
+    const isCollapsed = collapsed[sec.id] !== false;
     const activeFilter = getFilter(sec.id);
 
     const filterKeys  = config.filterKeys || ["all"];
@@ -244,27 +249,41 @@ const GraphicDesign = () => {
     return (
       <div className="gd-section gd-section-typed" key={sec.id} style={{ "--section-accent": accentColor }}>
         {/* Section Header */}
-        <div className="gd-section-header" style={{ borderBottomColor: accentColor + "30" }}>
-          <div className="gd-section-title-row">
-            {badge && <span className="gd-section-badge" style={{ background: accentColor + "20", color: accentColor, borderColor: accentColor + "50" }}>{badge}</span>}
-            <h3 className="gd-section-title" style={{ color: accentColor }}>{sec.title}</h3>
-            <span className="gd-section-count">{sec.items.length} item{sec.items.length !== 1 ? "s" : ""}</span>
+        <div 
+          className="gd-section-header" 
+          style={{ borderBottomColor: accentColor + "30", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "flex-start", paddingBottom: "1.2rem" }}
+          onClick={() => toggleCollapse(sec.id)}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center" }}>
+            <div className="gd-section-title-row">
+              {config.badgeText && (
+                <span className="gd-section-badge" style={{ background: accentColor + "20", color: accentColor, borderColor: accentColor + "50" }}>
+                  {config.badgeIcon && <FontAwesomeIcon icon={config.badgeIcon} style={{ marginRight: "0.4rem" }} />}
+                  {config.badgeText}
+                </span>
+              )}
+              <h3 className="gd-section-title" style={{ color: accentColor }}>{sec.title}</h3>
+              <span className="gd-section-count">{sec.items.length} item{sec.items.length !== 1 ? "s" : ""}</span>
+            </div>
+            <div className="gd-section-actions">
+              <button className="gd-action-btn">
+                <FontAwesomeIcon icon={isCollapsed ? faChevronDown : faChevronUp} />
+              </button>
+            </div>
           </div>
-          <div className="gd-section-actions">
-            <button className="gd-action-btn" onClick={() => toggleCollapse(sec.id)}>
-              <FontAwesomeIcon icon={isCollapsed ? faChevronDown : faChevronUp} />
-            </button>
+
+          <div className="gd-section-header-info" style={{ width: "100%", marginTop: "1rem" }}>
+            {description && <p style={{ fontSize: "0.95rem", opacity: 0.85, marginBottom: isCollapsed ? "0.8rem" : "0", color: "var(--text-color)" }}>{description}</p>}
+            {isCollapsed && (
+              <p style={{ fontSize: "0.95rem", color: accentColor, fontWeight: 600, display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                Click here to view more <FontAwesomeIcon icon={faChevronDown} />
+              </p>
+            )}
           </div>
         </div>
 
         {!isCollapsed && (
           <>
-            {/* ── Section Description ── */}
-            {description && (
-              <div className="gd-section-description">
-                <p>{description}</p>
-              </div>
-            )}
 
             {/* ── Filter Tabs ── */}
             {sec.items.length > 0 && (
